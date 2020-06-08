@@ -34,6 +34,4 @@ Apresenta os eventos vencidos como um log. Por isso não é possível deletar, n
 
 **obs: Esse projeto está configurado com o banco de dados sqlite3. Caso opte por trabalhar com outro banco de dados, não esqueça de alterar as informações no settings.
 
-Antes de rodar o projeto, instale as dependências através do arquivo requirements.txt >> pip install -r requirements.txt
-
 Enjoy! :D
