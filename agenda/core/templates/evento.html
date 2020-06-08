@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Agenda de Eventos
+{% endblock title %}
+
+{% block content %}
+<h2>Cadastro de Eventos</h2>
+<hr>
+<form action="submit" method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+        <input type="number" name="id_evento" value="{{ evento.id }}" class="form-control" hidden>
+    </div>
+    <div class="form-group">
+        <label for="titulo">Título:</label>
+        <input type="text" name="titulo" placeholder="Digite o Título..." class="form-control" value="{{ evento.titulo }}" required>
+    </div>
+    <div class="form-group">
+        <label for="data_evento">Data do Evento:</label>
+        <input type="datetime-local" name="data_evento" class="form-control" value="{{ evento.get_data_input_evento }}" required>
+    </div>
+    <div class="form-group">
+        <label for="descricao">Descrição:</label>
+        <textarea name="descricao" class="form-control" id="" cols="30" rows="10">{{ evento.descricao }}</textarea>
+    </div>
+    <hr>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Salvar</button>
+        <a href="/" class="btn btn-secondary">Cancelar</a>
+    </div>
+</form>
+
+
+{% endblock content %}

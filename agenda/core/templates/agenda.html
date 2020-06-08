@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Listagem de Eventos
+{% endblock title %}
+
+{% block content %}
+<h1 class="text-center">Listagem de Eventos</h1>
+<hr>
+{% if not eventos %}
+<h5>Nenhum evento cadastrado.</h5>
+{% else %}
+<div class="table-responsive">
+<table class="table">
+    <thead class="thead-dark">
+    <tr>
+        <th scope="col">Título</th>
+        <th scope="col">Descrição</th>
+        <th scope="col">Data do Evento</th>
+        <th scope="col">Data de Criação</th>
+        <th scope="col">Usuário</th>
+        <th scope="col">Ações</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for evento in eventos %}
+    <tr>
+        <td>{{evento.titulo}}</td>
+        <td>{{evento.descricao}}</td>
+        <td>{{evento.data_evento|date:"d/m/Y H:i"}}</td>
+        <td>{{evento.data_criacao|date:"d/m/Y H:i"}}</td>
+        <td>{{evento.usuario}}</td>
+        <td>
+            <a href="evento/?id={{evento.id}}">Editar</a>
+            <a href="evento/delete/{{ evento.id }}">Excluir</a>
+
+        </td>
+    </tr>
+    {% endfor  %}
+    </tbody>
+</table>
+</div>
+<hr/>
+<a href="evento/" class="btn btn-primary">Novo Evento</a>
+{% endif %}
+{% endblock content %}

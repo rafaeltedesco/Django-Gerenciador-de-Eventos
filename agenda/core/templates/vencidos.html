@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Eventos Anteriores
+{% endblock title %}
+
+{% block content %}
+<h1 class="text-center">Eventos Anteriores</h1>
+<hr>
+{% if not eventos %}
+<h5>Nenhum evento antigo encontrado.</h5>
+{% else %}
+<div class="table-responsive">
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th>Título</th>
+            <th>Descrição</th>
+            <th>Data do Evento</th>
+            <th>Data de Criação</th>
+            <th>Usuário</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for evento in eventos %}
+        <tr>
+            <td>{{evento.titulo}}</td>
+            <td>{{evento.descricao}}</td>
+            <td>{{evento.data_evento|date:"d/m/Y H:i"}}</td>
+            <td>{{evento.data_criacao|date:"d/m/Y H:i"}}</td>
+            <td>{{evento.usuario}}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endif%}
+
+{% endblock content %}

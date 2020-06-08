@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Login
+{% endblock title %}
+
+{% block content %}
+<h1>Login</h1>
+<hr>
+<form method="POST" class="form">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="username">Usuário: </label>
+        <input class="form-control" type="text" placeholder="Digite o nome do usuário aqui..." name="username">
+    </div>
+    <div class="form-group">
+        <label for="password" placeholder="Digite sua senha aqui">Senha: </label>
+        <input class="form-control" type="password" name="password">
+    </div>
+    <div class="form-group">
+        <button class="btn btn-primary" type="submit">Autenticar</button>
+        <a href="{% url 'novo_usuario' %}" class="btn btn-secondary">Novo Usuário</a>
+    </div>
+    {% for message in messages %}
+    <div class="alert-danger">
+        {{ message }}
+    </div>
+    {% endfor %}
+</form>
+{% endblock content %}
