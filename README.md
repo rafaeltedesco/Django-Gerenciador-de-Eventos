@@ -32,6 +32,6 @@ Apresenta os eventos vencidos como um log. Por isso não é possível deletar, n
 ![alt text](screenshots_gerenciador/screenshot.png?raw=true "API")
 
 
-**obs: Esse projeto está configurado com o banco de dados sqlite3. Caso opte por trabalhar com outro banco de dados, não esqueça de alterar as informações no settings.
+** obs: ** Esse projeto está configurado com o banco de dados sqlite3. Caso opte por trabalhar com outro banco de dados, não esqueça de alterar as informações no settings.
 
 Enjoy! :D
