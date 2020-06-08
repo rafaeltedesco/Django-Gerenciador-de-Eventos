@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout, login, authenticate
 from django.contrib import messages
 from django.contrib.auth.models import User
-
+from django.http.response import JsonResponse
 
 # Create your views here.
 
@@ -98,3 +98,11 @@ def vencidos(request):
         'eventos': eventos,
     }
     return render(request, 'vencidos.html', context)
+
+
+@login_required(login_url='/login')
+def json_lista_evento(request):
+    user = request.user
+    eventos = evento_services.get_eventos(user).values()
+    return JsonResponse(list(eventos), safe=False)
+

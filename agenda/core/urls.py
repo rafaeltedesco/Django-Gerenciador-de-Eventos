@@ -12,5 +12,6 @@ urlpatterns = [
     path('agenda/evento/submit', views.submit_evento, name='submit_evento'),
     path('cadastrar/usuario', views.cadastrar_usuario, name='novo_usuario'),
     path('vencidos', views.vencidos, name='vencidos'),
+    path('api/lista_eventos/', views.json_lista_evento, name='listar_eventos_json'),
 
 ]
