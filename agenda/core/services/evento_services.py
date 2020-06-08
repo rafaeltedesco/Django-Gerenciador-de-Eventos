@@ -6,6 +6,9 @@ def get_eventos(user):
     return Evento.objects.filter(usuario=user,
                                  data_evento__gt=data_atual)
 
+def get_eventos_api(user):
+    return Evento.objects.filter(usuario=user)
+
 def get_last_eventos(user):
     data_atual = datetime.now()
     return Evento.objects.filter(usuario=user,

@@ -103,6 +103,6 @@ def vencidos(request):
 @login_required(login_url='/login')
 def json_lista_evento(request):
     user = request.user
-    eventos = evento_services.get_eventos(user).values()
+    eventos = evento_services.get_eventos_api(user).values()
     return JsonResponse(list(eventos), safe=False)
 
