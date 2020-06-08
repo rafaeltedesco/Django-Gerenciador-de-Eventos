@@ -9,7 +9,7 @@ Esse mini projeto que desenvolvi é um agenda de Eventos multiusuário e contemp
 ## Listagem de Eventos
 ![alt text](screenshots_gerenciador/screenshot2.png?raw=true "Listagem de Eventos")
 
-### Após um cadastro
+### Listagem de Eventos - Após um cadastro
 
 Nessa tela ainda é possível realizar algumas ações como editar e excluir um evento.
 
